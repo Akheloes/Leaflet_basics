@@ -1,10 +1,14 @@
-var mymap = L.map('mapid').setView([51.505, -0.09], 13);
+let toulouseLocation = {lat: 43.604390, lon: 1.443379};
+let map = L.map('mapid').setView(toulouseLocation, 19);
 
-L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-    maxZoom: 18,
-    id: 'mapbox/streets-v11',
-    tileSize: 512,
-    zoomOffset: -1,
-    accessToken: 'your.mapbox.access.token'
-}).addTo(mymap);
+// add the OpenStreetMap tiles
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  maxZoom: 19,
+  attribution: '&copy; <a href="https://openstreetmap.org/copyright">OpenStreetMap contributors</a>'
+}).addTo(map);
+
+// show the scale bar on the lower left corner
+L.control.scale().addTo(map);
+
+// show a marker on the map
+L.marker(toulouseLocation).bindPopup('The center of the world').addTo(map);
