@@ -1,6 +1,11 @@
 <!doctype html>
 <html lang="fr">
 <head>
+  
+    <!-- tell the mobile browser to disable unwanted scaling of the page and set it to its actual size 
+        by placing the following line in the head section or our HTML page -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
   <meta charset="utf-8">
   <title>Titre de la page</title>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
@@ -13,7 +18,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="mapid"></div>
+    <div id="map"></div>
     <script src="script.js"></script>
 </body>
 </html>
